@@ -83,7 +83,7 @@ if (window.location.pathname === '/servicos') {
     var botaoColeta = document.getElementById("button-coleta");
 
     // Verificar a condição e atualizar o texto do botão
-    if (localStorage.getItem('parametro')) {
+    if (localStorage.getItem('parametro') === 'true') {
         botaoColeta.innerText = "Solicitar Coleta!";
         botaoColeta.onclick = function () {
             window.location.href = '/solicitar_coleta';
