@@ -24,8 +24,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - CSS
 - Javascript
 
-
-
+##  [Link do projeto no Heroku!](https://battery-clean.herokuapp.com/)
 ## 🚀 Como executar o projeto
 ### Pré-requisitos
 
