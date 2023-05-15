@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços</title>
+    <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+    <header class="header">
+
+        <div class="header-logo">
+            <img class="header-logo-img" src="assets/img/bc-logo.png" alt="Logotipo da empresa">
+        </div>
+
+        <div class="header-nav-area">
+            <nav class="header-nav">
+                <ul class="header-list">
+                    <a class="header-list-link" onclick="window.location.href='/'" href="#">Início</a>
+                    <a class="header-list-link" onclick="window.location.href='/servicos'" href="#">Serviços</a>
+                    <a class="header-list-link" onclick="" href="#">Benefícios</a>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="header-auth-container">
+            <div class="header-auth-area">
+                <div class="user-info">
+                    <div class="user-image">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="user-message">
+                        <p id="message-login">Você não está logado!</p>
+                    </div>
+                </div>
+                <div class="login-button">
+                    <button onclick="gerenciarLogin()" id="loginButton">Fazer Login</button>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <main id="main-servicos">
+        <div class="content-box-double">
+            <div class="content-box-area">
+                <div class="box-text">
+                    <h2>Solicitar coleta de baterias!</h2>
+                    <p>Apresentamos um inovador sistema de coleta de baterias para reciclagem, com o objetivo de
+                        facilitar e incentivar a participação dos indivíduos nesse processo essencial para a preservação
+                        ambiental. Nosso sistema foi cuidadosamente projetado para oferecer comodidade e consciência
+                        ecológica aos nossos clientes. Com pontos de coleta estrategicamente localizados e um processo
+                        simples de entrega, buscamos tornar o descarte correto de baterias mais acessível do que nunca.
+                        Junte-se a nós nessa iniciativa sustentável e ajude a construir um futuro mais verde e saudável
+                        para todos.</p>
+                </div>
+                <div class="content-button-area">
+                    <button class="content-button" id="button-coleta" onclick="window.location.href='/login'">Solicitar
+                        Coleta!</button>
+                </div>
+            </div>
+            <div class="search-box-area">
+                <div class="search-box-map">
+                    <img class="search-box-img" src="../assets/img/map.jpg" alt="Mapa representativo">
+                </div>
+                <div class="search-box-text">
+                    <h2>Localizar pontos de coleta!</h2>
+                    <p>Basta inserir seu endereço abaixo e será exibido de forma rápida e intuitiva os pontos de coleta
+                        mais próximos, permitindo que você tome a melhor decisão para o descarte consciente. Com essa
+                        ferramenta, você estará contribuindo para a preservação do meio ambiente de maneira conveniente
+                        e eficiente.</p>
+                </div>
+                <div class="search-box-input">
+                    <button class="content-button" id="content-button-search" onclick="buscarCep()"><i
+                            class="fa-solid fa-magnifying-glass"></i></button>
+                    <input type="text" id="cep" name="cep" placeholder="Digite um CEP ou Endereço">
+
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-contacts">
+
+                <img class="footer-logo-img" src="assets/img/bc-logo-white.png" Logotipo da empresa">
+                <p>Coletando baterias, </br> por um meio ambiente melhor!</p>
+
+                <div class="footer-social-media">
+                    <a href="#" class="footer-link" id="instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#" class="footer-link" id="facebook">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+
+                    <a href="#" class="footer-link" id="whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+
+                </div>
+            </div>
+
+            <ul class="footer-list">
+                <li class="footer-list">
+                    <h3>Blog</h3>
+                </li>
+                <li>
+                    <a href="#" class="footer-link">Baterias</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-link">Meio hambiente</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-link">Sustentável</a>
+                </li>
+            </ul>
+
+            <ul class="footer-list">
+                <li class="footer-list">
+                    <h3>Serviços</h3>
+                </li>
+                <li>
+                    <a href="#" class="footer-link">Coletas</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-link">Pontos de coleta</a>
+                </li>
+                <li>
+                    <a href="#" class="footer-link">Benefícios</a>
+                </li>
+            </ul>
+
+            <div class="footer-subscribe">
+                <h3>Newsletter</h3>
+
+                <p>Entre com seu email para receber nossas novidades!
+                </p>
+
+                <div class="input-group">
+                    <input type="email" name="email" id="email">
+                    <button>
+                        <i class="fa-regular fa-envelope"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            &#169
+            2023 todos os direitos reservados
+        </div>
+    </footer>
+    <script src="../js/controller.js"></script>
+</body>
+
+</html>

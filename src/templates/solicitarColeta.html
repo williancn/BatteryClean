@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitar Serviços</title>
+  <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-logo">
+      <img class="header-logo-img" src="assets/img/bc-logo.png" alt="Logotipo da empresa">
+    </div>
+
+    <div class="header-nav-area">
+      <nav class="header-nav">
+        <ul class="header-list">
+          <a class="header-list-link" onclick="window.location.href='/'" href="#">Início</a>
+          <a class="header-list-link" onclick="window.location.href='/servicos'" href="#">Serviços</a>
+          <a class="header-list-link" onclick="" href="#">Benefícios</a>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="header-auth-container">
+      <div class="header-auth-area">
+        <div class="user-info">
+          <div class="user-image">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div class="user-message">
+            <p id="message-login">Você não está logado!</p>
+          </div>
+        </div>
+        <div class="login-button">
+          <button onclick="gerenciarLogin()" id="loginButton">Fazer Login</button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div id="container">
+    <div class="form-box">
+      <div class="form-title">
+        <h2>Solicitar Coleta</h2>
+      </div>
+
+      <form action="/solicitar_coleta" method="post" id="form" class="form">
+        <fieldset class="first-fieldset">
+          <legend>Local da coleta</legend>
+
+          <div class="form-control end">
+            <div class="form-label">
+              <input type="text" id="end" placeholder="Ex: Rua principal, 123">
+              <label for="end">Endereço</label>
+            </div>
+            <div class="form-erro">
+              <i class="fas fa-exclamation-circle"></i>
+              <i class="fas fa-check-circle"></i>
+              <small>Mensagem de erro</small>
+            </div>
+          </div>
+
+          <div class="form-control">
+            <div class="form-label">
+
+              <input type="text" id="estado" placeholder="Digite seu estado.">
+              <label for="estado">Estado</label>
+            </div>
+            <div class="form-erro">
+              <i class="fas fa-exclamation-circle"></i>
+              <i class="fas fa-check-circle"></i>
+              <small>Mensagem de erro</small>
+            </div>
+          </div>
+
+          <div class="form-control">
+            <div class="form-label">
+
+              <input type="text" id="cidade" placeholder="Digite sua cidade.">
+              <label for="cidade">Cidade</label>
+            </div>
+            <div class="form-erro">
+              <i class="fas fa-exclamation-circle"></i>
+              <i class="fas fa-check-circle"></i>
+              <small>Mensagem de erro</small>
+            </div>
+          </div>
+
+          <div class="form-control">
+            <div class="form-label">
+
+              <input type="text" id="end-comp" placeholder="Ex: Apto 48">
+              <label for="end-comp">Endereço (comp.)</label>
+            </div>
+            <div class="form-erro">
+              <i class="fas fa-exclamation-circle"></i>
+              <i class="fas fa-check-circle"></i>
+              <small>Mensagem de erro</small>
+            </div>
+          </div>
+
+          <div class="form-control">
+            <div class="form-label">
+
+              <input type="cep" id="cep" placeholder="00000-000">
+              <label for="cep">CEP</label>
+            </div>
+            <div class="form-erro">
+              <i class="fas fa-exclamation-circle"></i>
+              <i class="fas fa-check-circle"></i>
+              <small>Mensagem de erro</small>
+            </div>
+          </div>
+
+          <div class="form-control">
+            <div class="form-label">
+              <input type="telefone" id="tel" placeholder="(00) - 00000-0000">
+              <label for="tel">Telefone</label>
+            </div>
+            <div class="form-erro">
+              <i class="fas fa-exclamation-circle"></i>
+              <i class="fas fa-check-circle"></i>
+              <small>Mensagem de erro</small>
+            </div>
+          </div>
+
+          <div class="form-control" id="dataHoraChrome">
+            <div class="form-label">
+              <input type="datetime-local" id="txtDataHora" name="dataHora">
+              <label for="txtDataHora">Data e Hora</label>
+            </div>
+          </div>
+
+        </fieldset>
+        <fieldset class="second-fieldset">
+          <legend>Adicionar bateria ou pilhas para a coleta!</legend>
+          <div id="cell-options">
+            <div class="options-desc">Use o menu abaixo para adicionar um tipo de bateria ou pilha.</div>
+            <select id="itens-menu" onchange="toggleSelection()">
+              <option disabled selected>Selecione um opção</option>
+              <optgroup label="Baterias cilíndricas">
+                <option value="AA">Baterias AA</option>
+                <option value="AAA">Baterias AAA</option>
+              </optgroup>
+              <optgroup label="Baterias de lítio">
+                <option value="CR2032">Baterias de lítio CR2032</option>
+                <option value="Button">Bateria de Prata Óxido (SR626SW)</option>
+                <option value="Button">Bateria de Alcalina (LR44)</option>
+
+              </optgroup>
+              <optgroup label="Baterias de dispositivos eletrônicos">
+                <option value="CellPhone">Baterias de celular</option>
+                <option value="Camera">Baterias de câmera</option>
+                <option value="Laptop">Baterias de laptop</option>
+              </optgroup>
+              <optgroup label="Baterias automotivas">
+                <option value="Car">Baterias de carro</option>
+              </optgroup>
+              <optgroup label="Pilhas comuns">
+                <option value="Alkaline">Pilhas alcalinas (C, D, 9V)</option>
+                <option value="Rechargeable">Pilhas recarregáveis (NiMH, NiCd)</option>
+              </optgroup>
+            </select>
+
+          </div>
+
+          <div id="option-itens-box">
+            <div id="emptySelection"><span>Selecione um item </br> no botão acima</span></div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <div class="form-submit-button">
+            <button type="submit" value="Enviar">Solicitar</button>
+          </div>
+        </fieldset>
+
+      </form>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-contacts">
+
+        <img class="footer-logo-img" src="../assets/img/bc-logo-white.png" alt="Logotipo da empresa">
+        <p>It's all about your dreams.</p>
+
+        <div class="footer-social-media">
+          <a href="#" class="footer-link" id="instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="#" class="footer-link" id="facebook">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+
+          <a href="#" class="footer-link" id="whatsapp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+
+        </div>
+      </div>
+
+      <ul class="footer-list">
+        <li class="footer-list">
+          <h3>Blog</h3>
+        </li>
+        <li>
+          <a href="#" class="footer-link">Tech</a>
+        </li>
+        <li>
+          <a href="#" class="footer-link">Adventures</a>
+        </li>
+        <li>
+          <a href="#" class="footer-link">Music</a>
+        </li>
+      </ul>
+
+      <ul class="footer-list">
+        <li class="footer-list">
+          <h3>Products</h3>
+        </li>
+        <li>
+          <a href="#" class="footer-link">App</a>
+        </li>
+        <li>
+          <a href="#" class="footer-link">Desktop</a>
+        </li>
+        <li>
+          <a href="#" class="footer-link">Cloud</a>
+        </li>
+      </ul>
+
+      <div class="footer-subscribe">
+        <h3>Subscribe</h3>
+
+        <p>Entre com seu email para ser notificado sobre
+          nossas novas soluções!
+        </p>
+
+        <div class="input-group">
+          <input type="email" name="email" id="email">
+          <button>
+            <i class="fa-regular fa-envelope"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-copyright">
+      &#169
+      2023 todos os direitos reservados
+    </div>
+  </footer>
+  <script src="../js/controller.js"></script>
+</body>
+
+</html>

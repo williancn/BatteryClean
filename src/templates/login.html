@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../../style.css">
+    <script src="https://kit.fontawesome.com/7989ee3d68.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-box-login">
+            <button id="backButton" onclick="voltarParaHome()"><i class="fa-solid fa-arrow-left"></i></button>
+            <div class="login-logo">
+                <img class="login-logo-img" src="assets/img/bc-logo.png" alt="Logotipo da empresa">
+            </div>
+            <h1 id="title">Entrar!</h1>
+            <form>
+                <div class="input-group-box">
+                    <div class="input-field" id="nameField" style="max-height: 0;">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" placeholder="Nome" id="nome">
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input pattern="[A-Za-z0-9._+-]+@[A-Za-z0-9 -]+\.[a-z]{2,}" id="email" required type="email"
+                            placeholder="Email" title="must be a valid email address">
+                        <div id="mensagem-email"></div>
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input title="A senha precisa conter ao menos 8 caracteres." pattern="[a-zA-Z0-9]{8,}"
+                            id="password" required type="password" placeholder="Senha">
+                        <div id="mensagem-senha"></div>
+                    </div>
+                    <p>Esqueceu sua senha? <a href="#">Clique aqui!</a></p>
+                </div>
+                <div class="btn-field">
+                    <button type="button" id="signinBtn" onclick="entrar()">Entrar</button>
+                    <button type="button" id="signupBtn" onclick="criarConta()" class="disabled">Criar conta</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        function voltarParaHome() {
+            window.location.href = '/';
+        }
+    </script>
+    <script src="../js/controller.js"></script>
+</body>
+
+</html>

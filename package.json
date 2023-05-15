@@ -1,0 +1,20 @@
+{
+  "name": "BatteryClean",
+  "private": true,
+  "version": "1.0",
+  "description": "Projeto para a materia do Projeto integrador Senac EAD",
+  "repository": "...",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.2",
+	  "dotenv": "^10.0.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "pretest": "npm install",
+    "//": "Do not install the Firefox driver to work around https://github.com/angular/webdriver-manager/issues/303."
+  },
+  "engines": {
+    "node": "18.14.0"
+  }
+}
